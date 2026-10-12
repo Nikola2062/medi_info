@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-12T08:00:00Z",
+  "profiles": {
+    "HK-20966": {
+      "identity": {
+        "brand_name": "Roaccutane",
+        "active_ingredient": "isotretinoin",
+        "strength": "20 mg",
+        "dosage_form": "軟膠囊",
+        "route": "口服"
+      },
+      "registration": {
+        "registration_date": "1984-01-31",
+        "legal_classification": "Part 1, Schedule 1 & Schedule 3 Poison",
+        "sale_requirement": "醫生處方藥物",
+        "source_id": "hk-drug-office-current"
+      },
+      "relationship": {
+        "status": "insufficient_public_evidence",
+        "label_zh_hant": "公開資料支持 Roche 品牌歷史",
+        "review_status": "evidence_review_required",
+        "interpretation_zh_hant": "這不是「非原研」或「學名藥」判定。現有資料反而支持 Roaccutane 與 Roche 原研 isotretinoin 品牌的歷史脈絡；尚欠的是香港監管資料中明確的參考製劑指定。",
+        "explanation_zh_hant": "Roaccutane 是這個產品的品牌名稱。註冊證明書持有人不一定是最初研發藥物的公司，而香港藥物辦公室的公開產品記錄沒有標示原研或參考製劑身份，因此本工具不會把品牌歷史推斷成香港監管分類。",
+        "evidence_notes_zh_hant": [
+          "現時香港登記記錄列 Zuellig Pharma Limited 為註冊證明書持有人。",
+          "較早期香港藥物名冊曾列 Roche Hong Kong Limited 為這個產品的持有人。",
+          "美國 FDA 資料指出 Hoffmann-La Roche 的 Accutane 是 1982 年首個獲批的 isotretinoin 產品；英國監管資料則把 Roaccutane 稱為品牌先導產品。這些資料支持 Roche 的原研品牌脈絡，但未直接確認 HK-20966 的香港參考製劑身份。"
+        ],
+        "source_ids": [
+          "hk-drug-office-current",
+          "hk-drug-office-historical",
+          "fda-innovator-history",
+          "mhra-brand-leader"
+        ]
+      },
+      "same_ingredient_comparison": {
+        "active_ingredient": "isotretinoin",
+        "selected_strength": "20 mg",
+        "status": "ingredient_match_only",
+        "intro_zh_hant": "香港官方資料集另有下列產品同樣列出 isotretinoin，產品名稱亦標示 20 mg。這只證明公開記錄中的活性成分和名稱所示劑量相同，不代表已確認為學名藥、治療等效或可以自行互換。",
+        "products": [
+          {
+            "registration_number": "HK-52035",
+            "product_name": "ACNOTIN 20 CAP 20MG",
+            "certificate_holder": "DCH AURIGA (HONG KONG) LIMITED - HEALTHCARE DIVISION"
+          },
+          {
+            "registration_number": "HK-68169",
+            "product_name": "DERMAVAX CAPSULES 20MG",
+            "certificate_holder": "HIND WING CO LTD"
+          },
+          {
+            "registration_number": "HK-54370",
+            "product_name": "NIMEGEN SOFT CAP 20MG",
+            "certificate_holder": "HANG LUNG TRADING (H.K.) CO"
+          },
+          {
+            "registration_number": "HK-50197",
+            "product_name": "ORATANE CAP 20MG",
+            "certificate_holder": "UNITED ITALIAN CORP (HK) LTD"
+          },
+          {
+            "registration_number": "HK-56026",
+            "product_name": "REDUCAR CAP 20MG",
+            "certificate_holder": "HEALTH ALLIANCE INTERNATIONAL CO LTD"
+          }
+        ],
+        "comparison_fields": [
+          {
+            "label_zh_hant": "活性成分",
+            "value_zh_hant": "公開登記均列 isotretinoin"
+          },
+          {
+            "label_zh_hant": "名稱所示劑量",
+            "value_zh_hant": "上述產品名稱均標示 20 mg"
+          },
+          {
+            "label_zh_hant": "非活性成分及致敏物",
+            "value_zh_hant": "香港公開登記資料集沒有提供；須逐一查閱適用的本地說明書"
+          },
+          {
+            "label_zh_hant": "治療等效及可否互換",
+            "value_zh_hant": "不能從相同成分或劑量推斷，須有監管證據並由醫生或藥劑師確認"
+          },
+          {
+            "label_zh_hant": "其他可能差異",
+            "value_zh_hant": "廠商、非活性成分、膠囊外觀、包裝、保存期及標籤內容可能不同"
+          }
+        ],
+        "generic_explainer_zh_hant": "學名藥不是假藥，也不只是未經批准的複製品。以美國 FDA 的一般定義，獲批學名藥須與品牌藥有相同活性成分、劑量、劑型及使用途徑，並證明生物等效；某些非活性成分可以不同。這項外地一般說明不能代替香港對個別產品的分類。",
+        "source_ids": [
+          "hk-registry-dataset",
+          "fda-generic-explainer"
+        ]
+      },
+      "regulatory_and_composition": {
+        "registration": {
+          "status": "current_public_record",
+          "label_zh_hant": "現時香港登記資料有記錄",
+          "summary_zh_hant": "香港藥物辦公室的公開資料截至 2026 年 10 月 2 日仍列出 HK-20966。首次登記日期不等於證明書到期日；香港藥物註冊證明書一般有效五年並可續期，而公開產品頁沒有顯示這張證明書的下一個到期日。",
+          "source_ids": [
+            "hk-drug-office-current",
+            "hk-registration-faq"
+          ]
+        },
+        "patent": {
+          "status": "not_assessed_product_specific",
+          "label_zh_hant": "未確認個別專利狀態",
+          "summary_zh_hant": "藥物註冊與專利是兩套不同制度。香港標準專利最長可受保護 20 年，但必須先識別涵蓋活性成分、配方或製程的個別專利及專利族，才能判定是否到期。不能單憑 1984 年登記日期作出結論。",
+          "source_ids": [
+            "hk-ipd-patent-basics",
+            "hk-ipd-trade-secrets"
+          ]
+        },
+        "composition": {
+          "status": "manufacturer_information_not_hk_verified",
+          "label_zh_hant": "已找到廠商配方名稱；香港版本待核對",
+          "active_ingredient_zh_hant": "isotretinoin 20 mg",
+          "groups": [
+            {
+              "label_zh_hant": "膠囊填充物",
+              "ingredients_zh_hant": [
+                "黃蜂蠟",
+                "精製大豆油",
+                "氫化大豆油",
+                "部分氫化大豆油"
+              ]
+            },
+            {
+              "label_zh_hant": "膠囊殼",
+              "ingredients_zh_hant": [
+                "明膠",
+                "85% 甘油",
+                "Karion 83（含山梨醇、甘露醇及氫化水解澱粉）",
+                "二氧化鈦（E171）",
+                "氧化鐵紅（E172）"
+              ]
+            },
+            {
+              "label_zh_hant": "印刷油墨",
+              "ingredients_zh_hant": [
+                "改性蟲膠",
+                "氧化鐵黑（E172）",
+                "丙二醇"
+              ]
+            }
+          ],
+          "allergen_note_zh_hant": "廠商資料列有多種大豆油；對大豆或花生過敏的人士應在使用前向醫生或藥劑師核對實際香港包裝及說明書。",
+          "completeness_zh_hant": "這份廠商文件公開了成分名稱，但沒有提供大部分非活性成分的精確含量或製造方法。香港註冊申請須向監管機構提交所有活性及非活性成分的名稱和含量，但這些完整資料沒有在公開產品頁展示。",
+          "jurisdiction_note_zh_hant": "配方名單來自 Roche 2019 年廠商產品資料，只可作跨地區參考；未能證明現時 HK-20966 在香港售賣批次的配方完全相同。",
+          "source_ids": [
+            "roche-formulation-2019",
+            "hk-registration-faq"
+          ]
+        }
+      },
+      "clinical_summary": {
+        "status": "clinical_review_required",
+        "is_public": false,
+        "reason_zh_hant": "異維A酸有重要妊娠及其他安全風險。依照本產品的內容政策，使用目的、警告、副作用、求助徵象及使用方法須由註冊藥劑師逐項核對來源後才能公開。",
+        "sections_awaiting_review_zh_hant": [
+          "通常用來做甚麼？",
+          "使用前先確認",
+          "可能出現的不舒服",
+          "何時需要立即求助？",
+          "怎樣使用？",
+          "醫護人員可能會監察甚麼？"
+        ],
+        "source_ids": [
+          "roche-product-information",
+          "fda-patient-safety",
+          "mhra-current-safety"
+        ]
+      },
+      "sources": [
+        {
+          "id": "hk-registry-dataset",
+          "authority": "Hong Kong Department of Health via DATA.GOV.HK",
+          "title": "List of Registered Pharmaceutical Products",
+          "jurisdiction": "HK",
+          "url": "https://data.gov.hk/en-data/dataset/hk-dh-dh_do-hk-dh-do-pharmaceutical-product",
+          "checked_at": "2026-10-11",
+          "kind": "current_regulatory_dataset"
+        },
+        {
+          "id": "hk-drug-office-current",
+          "authority": "Hong Kong Department of Health, Drug Office",
+          "title": "ROACCUTANE CAP 20MG — HK-20966",
+          "jurisdiction": "HK",
+          "url": "https://www.drugoffice.gov.hk/eps/drug/productDetail/en/healthcare_providers/153009",
+          "checked_at": "2026-10-11",
+          "kind": "current_regulatory_record"
+        },
+        {
+          "id": "hk-registration-faq",
+          "authority": "Hong Kong Department of Health, Drug Office",
+          "title": "Frequently Asked Questions — Registration of Pharmaceutical Products",
+          "jurisdiction": "HK",
+          "url": "https://www.drugoffice.gov.hk/eps/do/en/pharmaceutical_trade/guidelines_forms/faq.html",
+          "checked_at": "2026-10-12",
+          "kind": "current_regulatory_guidance"
+        },
+        {
+          "id": "hk-ipd-patent-basics",
+          "authority": "Hong Kong Intellectual Property Department",
+          "title": "Patent basics",
+          "jurisdiction": "HK",
+          "url": "https://www.ipd.gov.hk/en/patents/patent-basics/index.html",
+          "checked_at": "2026-10-12",
+          "kind": "current_patent_guidance"
+        },
+        {
+          "id": "hk-ipd-trade-secrets",
+          "authority": "Hong Kong Intellectual Property Department",
+          "title": "Trade Secrets (Undisclosed Commercial Information)",
+          "jurisdiction": "HK",
+          "url": "https://www.ipd.gov.hk/en/ip-overview/trade-secrets/index.html",
+          "checked_at": "2026-10-12",
+          "kind": "current_trade_secret_guidance"
+        },
+        {
+          "id": "hk-drug-office-historical",
+          "authority": "Hong Kong Department of Health, Drug Office",
+          "title": "Compendium of registered pharmaceutical products",
+          "jurisdiction": "HK",
+          "url": "https://www.drugoffice.gov.hk/eps/mobile/tc/doc/Compdium.pdf",
+          "checked_at": "2026-10-11",
+          "kind": "historical_regulatory_record"
+        },
+        {
+          "id": "fda-innovator-history",
+          "authority": "U.S. Food and Drug Administration",
+          "title": "FDA review describing the original Accutane approval",
+          "jurisdiction": "US",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/211913Orig1s000ChemR.pdf",
+          "checked_at": "2026-10-11",
+          "kind": "foreign_regulatory_history"
+        },
+        {
+          "id": "mhra-brand-leader",
+          "authority": "UK Medicines and Healthcare products Regulatory Agency",
+          "title": "Isotretinoin: risk of serious skin reactions",
+          "jurisdiction": "UK",
+          "url": "https://www.gov.uk/drug-safety-update/isotretinoin-risk-of-serious-skin-reactions",
+          "checked_at": "2026-10-11",
+          "kind": "foreign_regulatory_history"
+        },
+        {
+          "id": "roche-product-information",
+          "authority": "Roche",
+          "title": "Roaccutane product information (July 2018)",
+          "jurisdiction": "manufacturer_global",
+          "url": "https://assets.roche.com/f/203780/x/fa85709aca/roaccutane-product-information-_-fe-english-ro-04-3780-_-july-2018.pdf",
+          "checked_at": "2026-10-11",
+          "kind": "manufacturer_product_information"
+        },
+        {
+          "id": "roche-formulation-2019",
+          "authority": "Roche",
+          "title": "Roaccutane product information — formulation details (August 2019)",
+          "jurisdiction": "manufacturer_global",
+          "url": "https://assets.roche.com/f/170883/x/afed934b03/roaccutane-pi-aug-2019.pdf",
+          "checked_at": "2026-10-12",
+          "kind": "manufacturer_formulation_information"
+        },
+        {
+          "id": "fda-patient-safety",
+          "authority": "U.S. Food and Drug Administration",
+          "title": "Isotretinoin capsule information",
+          "jurisdiction": "US",
+          "url": "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/isotretinoin-capsule-information",
+          "checked_at": "2026-10-11",
+          "kind": "foreign_regulator_patient_safety"
+        },
+        {
+          "id": "mhra-current-safety",
+          "authority": "UK Medicines and Healthcare products Regulatory Agency",
+          "title": "Isotretinoin: current safety measures",
+          "jurisdiction": "UK",
+          "url": "https://www.gov.uk/drug-safety-update/isotretinoin-roaccutanev-introduction-of-new-safety-measures-including-additional-oversight-of-the-initiation-of-treatment-for-patients-under-18-years-of-age",
+          "checked_at": "2026-10-11",
+          "kind": "foreign_regulator_patient_safety"
+        },
+        {
+          "id": "fda-generic-explainer",
+          "authority": "U.S. Food and Drug Administration",
+          "title": "What is the approval process for generic drugs?",
+          "jurisdiction": "US",
+          "url": "https://www.fda.gov/drugs/generic-drugs/what-approval-process-generic-drugs",
+          "checked_at": "2026-10-11",
+          "kind": "foreign_regulator_generic_education"
+        }
+      ]
+    }
+  }
+}

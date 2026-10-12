@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="查閱香港註冊西藥、品牌關係證據和醫藥內容審核狀態。" />
+    <title>Med Info — 藥物資料查閱</title>
+    <link rel="stylesheet" href="./styles.css?v=6" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Med Info 首頁">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span>Med Info</span>
+      </a>
+      <span class="market-badge">香港 · HK</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">先回答最重要的問題</p>
+        <h1 id="page-title">這是甚麼藥？<br /><span>重點先看清楚。</span></h1>
+        <p class="intro">
+          輸入藥盒上的香港註冊編號，先查看登記、原研品牌關係、成分藥效和公開資料完整度。
+          證據和技術資料可按需要再展開。
+        </p>
+      </section>
+
+      <section class="lookup-card" aria-labelledby="lookup-title">
+        <div class="step-label"><span>01</span> 手動查閱</div>
+        <h2 id="lookup-title">香港註冊編號</h2>
+        <form id="lookup-form" novalidate>
+          <label for="registration-number">在藥盒上尋找 HK-XXXXX</label>
+          <div class="input-row">
+            <input
+              id="registration-number"
+              name="registration-number"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              placeholder="例如 HK-20966"
+              maxlength="32"
+              aria-describedby="format-help form-error"
+              required
+            />
+            <button type="submit">查閱</button>
+          </div>
+          <p id="format-help" class="field-help">接受 HK-12345、HK 12345 或五位數字格式。</p>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+        </form>
+      </section>
+
+      <section id="result" class="result-card" aria-live="polite" hidden></section>
+
+      <section class="capture-card" aria-labelledby="capture-title">
+        <div class="step-label"><span>02</span> 三步拍攝</div>
+        <h2 id="capture-title">拍攝完整包裝</h2>
+        <p id="capture-intro" class="capture-intro">完整版本會依次拍攝三個位置。公開預覽暫不接收或上傳相片，避免在識別及私隱流程完成前收集使用者資料。</p>
+
+        <div class="privacy-check">
+          <input id="package-only" type="checkbox" />
+          <label for="package-only">
+            我已遮蓋姓名、電話、地址、病人編號和診所資料，只會拍攝藥物包裝。
+          </label>
+        </div>
+
+        <form id="capture-form">
+          <div class="capture-steps">
+            <article class="capture-step" data-slot="front">
+              <span class="capture-number">1</span>
+              <h3>包裝正面</h3>
+              <p>拍攝完整產品名稱和盒面，不要裁走邊緣。</p>
+              <input class="capture-input" id="capture-front" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" disabled />
+              <label class="capture-action" for="capture-front">選擇或拍攝</label>
+              <p id="status-front" class="capture-status">尚未加入</p>
+            </article>
+
+            <article class="capture-step" data-slot="ingredients">
+              <span class="capture-number">2</span>
+              <h3>成分及劑量</h3>
+              <p>確保成分、劑量和劑型文字清晰可讀。</p>
+              <input class="capture-input" id="capture-ingredients" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" disabled />
+              <label class="capture-action" for="capture-ingredients">選擇或拍攝</label>
+              <p id="status-ingredients" class="capture-status">尚未加入</p>
+            </article>
+
+            <article class="capture-step" data-slot="identifier">
+              <span class="capture-number">3</span>
+              <h3>註冊編號或條碼</h3>
+              <p>拍攝 HK-XXXXX、條碼、批次和有效日期所在的一面。</p>
+              <input class="capture-input" id="capture-identifier" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" disabled />
+              <label class="capture-action" for="capture-identifier">選擇或拍攝</label>
+              <p id="status-identifier" class="capture-status">尚未加入</p>
+            </article>
+          </div>
+
+          <div class="capture-footer">
+            <p id="capture-message" role="status" aria-live="polite">確認私隱提示後即可開始。</p>
+            <button id="clear-capture" class="secondary-button" type="button" hidden>刪除今次相片</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="boundary-note" aria-label="服務限制">
+        <span class="note-icon" aria-hidden="true">i</span>
+        <p><strong>這是資料查閱工具。</strong>它不會診斷病症、建議用藥、改變劑量，亦不能證明藥物真偽。</p>
+      </aside>
+    </main>
+
+    <footer>
+      <p>資料範圍：香港註冊西藥</p>
+      <p>如資料與包裝不符，請帶同藥盒向註冊藥劑師查詢。</p>
+    </footer>
+    <script>
+      const medInfoLocalHost = ["127.0.0.1", "localhost", "::1"].includes(window.location.hostname);
+      window.MED_INFO_PUBLIC_REGISTRY_URL = medInfoLocalHost ? null : "./data/hk-registry.json";
+      window.MED_INFO_CAPTURE_ENABLED = medInfoLocalHost;
+    </script>
+    <script src="./app.js?v=6" defer></script>
+  </body>
+</html>

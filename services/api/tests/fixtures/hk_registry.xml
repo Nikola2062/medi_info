@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drugs>
+  <lastUpdate>2026-10-02</lastUpdate>
+  <drug>
+    <productName>Example Relief Tablets 500 mg</productName>
+    <regCertHolderName>Example Medicines Limited</regCertHolderName>
+    <permitNo>HK-12345</permitNo>
+    <activeIngs>
+      <activeIng>Example ingredient 500 mg</activeIng>
+      <activeIng>Second example ingredient</activeIng>
+    </activeIngs>
+  </drug>
+  <drug>
+    <productName>示例舒緩藥片 250 毫克</productName>
+    <regCertHolderName>示例藥業有限公司</regCertHolderName>
+    <permitNo>HK-54321</permitNo>
+    <activeIngs>
+      <activeIng>示例成分 250 毫克</activeIng>
+    </activeIngs>
+  </drug>
+</drugs>

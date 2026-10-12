@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "med-info-api"
+version = "0.1.0"
+description = "Evidence-first medicine registry and identification API"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.109,<1",
+  "lxml>=5,<7",
+  "pillow>=10,<13",
+  "pydantic>=2.6,<3",
+  "python-multipart>=0.0.9,<1",
+  "uvicorn[standard]>=0.27,<1",
+]
+
+[project.optional-dependencies]
+dev = ["httpx>=0.26,<1"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["med_info_api*"]
+
+[tool.setuptools.package-data]
+"med_info_api.ingestion" = ["schemas/*.xsd"]

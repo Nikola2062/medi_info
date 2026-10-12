@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "registration_number": "HK-20966",
+  "version": 1,
+  "review_status": "clinical_review_required",
+  "reviewer_id": null,
+  "reviewed_at": null,
+  "draft_notice": "This file is a review draft and is excluded from the public static directory.",
+  "claims": [
+    {
+      "field": "uses_plain",
+      "text_zh_hant": "異維A酸是一種口服維A酸類藥物，通常用於嚴重、可能留下永久疤痕，或經標準治療後仍未改善的暗瘡。這是藥物的一般用途，不代表它一定是你獲處方的原因。",
+      "source_refs": ["roche-product-information:sections-1.1-and-2.1"]
+    },
+    {
+      "field": "highest_priority_warning_plain",
+      "text_zh_hant": "懷孕期間使用異維A酸可嚴重傷害胎兒。可能懷孕的人必須嚴格遵從處方醫生的防孕及驗孕安排；如懷疑懷孕，應立即聯絡醫生。",
+      "source_refs": [
+        "roche-product-information:section-2.4.1",
+        "fda-patient-safety:isotretinoin-information"
+      ]
+    },
+    {
+      "field": "before_use_plain",
+      "text_zh_hant": "使用前應讓處方醫生知道你是否懷孕或餵哺母乳、正在服用四環素類抗生素或維他命 A 補充劑，以及是否有肝臟、血脂或精神健康方面的問題。不要把藥物交給其他人使用。",
+      "source_refs": [
+        "roche-product-information:sections-2.3-2.4-and-2.8",
+        "mhra-current-safety:advice-for-patients"
+      ]
+    },
+    {
+      "field": "common_effects_plain",
+      "text_zh_hant": "常見不適包括嘴唇、皮膚、鼻腔或眼睛乾燥。個別反應和程度會因人而異。",
+      "source_refs": ["roche-product-information:section-2.6"]
+    },
+    {
+      "field": "urgent_help_plain",
+      "text_zh_hant": "如出現嚴重頭痛並伴隨噁心或視力改變、嚴重皮膚反應，或情緒和行為出現令人擔心的改變，應立即尋求醫療意見。",
+      "source_refs": [
+        "roche-product-information:sections-2.4-and-2.6",
+        "fda-patient-safety:mental-health-warning",
+        "mhra-current-safety:patient-advice"
+      ]
+    },
+    {
+      "field": "use_guidance_plain",
+      "text_zh_hant": "只按藥袋和處方醫生指示服用。產品資料說明膠囊應隨食物服用，但實際劑量及療程必須由有相關經驗的醫生按個別情況決定。不要自行停藥或改變劑量。",
+      "source_refs": ["roche-product-information:section-2.2"]
+    },
+    {
+      "field": "monitoring_plain",
+      "text_zh_hant": "醫護人員可能會按情況安排懷孕測試、血脂及肝功能檢查，並在治療期間了解精神健康及其他副作用。",
+      "source_refs": [
+        "roche-product-information:section-2.4",
+        "mhra-current-safety:monitoring-requirements"
+      ]
+    }
+  ]
+}
