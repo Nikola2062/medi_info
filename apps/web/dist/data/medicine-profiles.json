@@ -34,6 +34,48 @@
           "mhra-brand-leader"
         ]
       },
+      "company_relationships": {
+        "headline_zh_hant": "不能只用「自研／代理」二分",
+        "summary_zh_hant": "香港資料可確認目前的註冊證持有人，也有海外官方資料支持 Roche 的原研品牌歷史；但未有產品級公開資料完整交代現時香港版本的製造、授權、進口和分銷鏈。",
+        "roles": [
+          {
+            "label_zh_hant": "品牌／原研歷史脈絡",
+            "value_zh_hant": "Roche／Roaccutane",
+            "status": "context_only",
+            "status_label_zh_hant": "海外官方背景",
+            "explanation_zh_hant": "美國及英國監管資料支持 Roche 與原研 isotretinoin 品牌的歷史關係；這不是 HK-20966 的香港監管分類。"
+          },
+          {
+            "label_zh_hant": "香港註冊及監管責任",
+            "value_from": "certificate_holder",
+            "status": "hk_verified",
+            "status_label_zh_hant": "香港官方資料",
+            "explanation_zh_hant": "現行登記列 Zuellig Pharma Limited 為註冊證明書持有人；持證商不一定是研發者、製造商或品牌擁有人。"
+          },
+          {
+            "label_zh_hant": "現時香港版本製造商",
+            "value_zh_hant": "未有公開產品級資料確認",
+            "status": "not_publicly_confirmed",
+            "status_label_zh_hant": "未公開確認",
+            "explanation_zh_hant": "現行公開產品記錄及批量資料未系統展示製造商；須核對實物包裝、說明書或產品級官方文件。"
+          },
+          {
+            "label_zh_hant": "香港進口／分銷角色",
+            "value_zh_hant": "未有公開產品級資料確認",
+            "status": "not_publicly_confirmed",
+            "status_label_zh_hant": "未公開確認",
+            "explanation_zh_hant": "持證商可以是製造商、進口批發商、分公司、代表、代理或分銷商；不能從持證商名稱選定其中一種角色。"
+          }
+        ],
+        "boundary_zh_hant": "未有資料證明產品由香港持證商自行研發，不等於已證實它是學名藥或代理產品；「原研血統」與「香港供應角色」是兩個不同問題。",
+        "source_ids": [
+          "hk-registry-dataset",
+          "hk-drug-office-current",
+          "hk-registration-applicant-guidance",
+          "fda-innovator-history",
+          "mhra-brand-leader"
+        ]
+      },
       "same_ingredient_comparison": {
         "active_ingredient": "isotretinoin",
         "selected_strength": "20 mg",
@@ -198,6 +240,15 @@
           "title": "Frequently Asked Questions — Registration of Pharmaceutical Products",
           "jurisdiction": "HK",
           "url": "https://www.drugoffice.gov.hk/eps/do/en/pharmaceutical_trade/guidelines_forms/faq.html",
+          "checked_at": "2026-10-12",
+          "kind": "current_regulatory_guidance"
+        },
+        {
+          "id": "hk-registration-applicant-guidance",
+          "authority": "Pharmacy and Poisons Board of Hong Kong",
+          "title": "Guidance Notes on Registration of Pharmaceutical Products/Substances",
+          "jurisdiction": "HK",
+          "url": "https://www.ppbhk.org.hk/eng/files/Guidance_on_Reg_of_Pharm_Prod_Sub_en.pdf?v=fswf0j",
           "checked_at": "2026-10-12",
           "kind": "current_regulatory_guidance"
         },

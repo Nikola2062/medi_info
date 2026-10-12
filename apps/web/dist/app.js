@@ -1,6 +1,6 @@
 const API_BASE = window.MED_INFO_API_BASE || "http://127.0.0.1:8000";
 const PUBLIC_REGISTRY_URL = window.MED_INFO_PUBLIC_REGISTRY_URL || null;
-const MEDICINE_PROFILES_URL = window.MED_INFO_PROFILES_URL || "./data/medicine-profiles.json?v=6";
+const MEDICINE_PROFILES_URL = window.MED_INFO_PROFILES_URL || "./data/medicine-profiles.json?v=7";
 const CAPTURE_ENABLED = window.MED_INFO_CAPTURE_ENABLED !== false;
 
 const form = document.querySelector("#lookup-form");
@@ -70,8 +70,8 @@ function relationshipOverview(profile) {
     return {
       badge: "未能確認",
       badgeClass: "status-pending",
-      title: "公開資料不足",
-      copy: "香港官方登記沒有原研或學名藥欄位；本工具不會靠品牌或公司名稱猜測。",
+      title: "研發血統未能確認",
+      copy: "香港公開註冊資料沒有列出此產品是否原研、學名藥或獲原研公司授權；持證商名稱不能代替這項判定。",
     };
   }
 
@@ -112,17 +112,81 @@ function relationshipOverview(profile) {
     return {
       badge: "部分證據",
       badgeClass: "status-context",
-      title: "與原研品牌有歷史關係，但未正式分類",
-      copy: "現有資料支持它與原研品牌的歷史脈絡，但香港公開資料未有把這個產品正式指定為參考製劑。這也不能證明手上包裝是真貨。",
+      title: "有原研品牌脈絡，但香港產品分類未確認",
+      copy: "現有資料支持它與原研品牌的歷史關係，但未直接證明這個香港註冊產品屬原研、學名藥或授權版本。",
     };
   }
 
   return {
     badge: "未能確認",
     badgeClass: "status-pending",
-    title: "公開資料不足",
-    copy: "現有來源不足以判定原研、參考藥或學名藥身份。",
+    title: "研發血統未能確認",
+    copy: "現有來源不足以判定原研、參考藥、學名藥或授權版本。這也不等於已證實產品是代理藥。",
   };
+}
+
+function renderCompanyRelationships(product, profile) {
+  const relationship = profile?.company_relationships;
+  const roles = relationship?.roles || [
+    {
+      label_zh_hant: "香港註冊及監管責任",
+      value_from: "certificate_holder",
+      status: "hk_verified",
+      status_label_zh_hant: "香港官方資料",
+      explanation_zh_hant: "這是香港註冊證明書持有人；單憑此欄不能判定它是研發者、製造商、代理或分銷商。",
+    },
+    {
+      label_zh_hant: "現時香港版本製造商",
+      value_zh_hant: "未有公開產品級資料確認",
+      status: "not_publicly_confirmed",
+      status_label_zh_hant: "未公開確認",
+      explanation_zh_hant: "須以實物包裝、說明書或產品級官方文件核對，不能由持證商名稱推斷。",
+    },
+    {
+      label_zh_hant: "香港進口／分銷角色",
+      value_zh_hant: "未有公開產品級資料確認",
+      status: "not_publicly_confirmed",
+      status_label_zh_hant: "未公開確認",
+      explanation_zh_hant: "公司可能同時擔任多種角色；公開註冊記錄沒有逐項說明。",
+    },
+  ];
+  const roleItems = roles.map((role) => {
+    const value = role.value_from === "certificate_holder"
+      ? product.certificate_holder || "官方資料未提供"
+      : role.value_zh_hant || "未有公開資料";
+    const className = role.status === "hk_verified"
+      ? "role-confirmed"
+      : role.status === "context_only" ? "role-context" : "role-unconfirmed";
+    return `
+      <li class="${className}">
+        <div class="role-heading">
+          <span>${escapeHtml(role.label_zh_hant)}</span>
+          <small>${escapeHtml(role.status_label_zh_hant)}</small>
+        </div>
+        <strong>${escapeHtml(value)}</strong>
+        <p>${escapeHtml(role.explanation_zh_hant)}</p>
+      </li>`;
+  }).join("");
+  const sourceIds = relationship?.source_ids || [];
+  const sources = (profile?.sources || []).filter((source) => sourceIds.includes(source.id));
+  const sourceLinks = sources.length
+    ? `<p class="role-sources">判定依據：${sources.map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.title)}</a>`).join("、")}</p>`
+    : "";
+
+  return `
+    <section class="company-relationship-panel" aria-labelledby="company-relationship-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">研發血統與公司角色</p>
+          <h3 id="company-relationship-title">${escapeHtml(relationship?.headline_zh_hant || "不能只用「自研／代理」二分")}</h3>
+        </div>
+        <span class="status-badge status-pending">逐項核對</span>
+      </div>
+      <p class="company-relationship-answer">${escapeHtml(relationship?.summary_zh_hant || "香港公開註冊資料可確認持證商，但通常不會公開產品的完整研發、製造、授權、進口及分銷鏈。")}</p>
+      <ul class="company-role-list">${roleItems}</ul>
+      <p class="company-boundary"><strong>怎樣理解：</strong>${escapeHtml(relationship?.boundary_zh_hant || "未有資料證明產品由香港持證商自行研發，不等於已證實它是學名藥或代理產品。")}</p>
+      ${sourceLinks}
+    </section>`;
 }
 
 function renderRelationshipConnection(product, profile) {
@@ -219,7 +283,7 @@ function renderAnswerSummary(product, profile, ingredients) {
           <p>在香港官方資料集找到完全相同的註冊編號。</p>
         </article>
         <article class="answer-card">
-          <div class="answer-label-row"><p>它與原研藥是甚麼關係？</p><span class="status-badge ${relationship.badgeClass}">${escapeHtml(relationship.badge)}</span></div>
+          <div class="answer-label-row"><p>它的研發血統是甚麼？</p><span class="status-badge ${relationship.badgeClass}">${escapeHtml(relationship.badge)}</span></div>
           <h4>${escapeHtml(relationship.title)}</h4>
           <p>${escapeHtml(relationship.copy)}</p>
           ${relationshipConnection}
@@ -465,6 +529,7 @@ function showProduct(product, source, isStale, profile) {
     <h2>${escapeHtml(product.product_name)}</h2>
     <p class="identity-line">${identityLine}</p>
     ${renderAnswerSummary(product, profile, ingredients)}
+    ${renderCompanyRelationships(product, profile)}
     <p class="safety-copy"><strong>關於真偽：</strong>這次只確認註冊編號在官方資料中有記錄。請再核對包裝上的產品名稱、成分和劑量；相符仍不能單獨證明手上產品是真貨。</p>
     ${renderSupportingDetails(product, profile, ingredients)}
     <p class="source-copy">

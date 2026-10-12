@@ -226,6 +226,28 @@ button:disabled { cursor: wait; opacity: 0.65; }
 .source-copy { color: var(--muted); font-size: 0.86rem; line-height: 1.55; }
 .source-copy a { color: var(--green-dark); }
 
+.company-relationship-panel {
+  margin-top: 1rem;
+  padding: clamp(1.1rem, 3vw, 1.5rem);
+  border: 1px solid #b9c3d2;
+  border-radius: 1rem;
+  background: #f7f8fc;
+}
+.company-relationship-panel h3 { margin: 0.15rem 0 0; font-size: clamp(1.15rem, 3vw, 1.4rem); }
+.company-relationship-answer { margin: 1rem 0 0; max-width: 60rem; line-height: 1.65; }
+.company-role-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.company-role-list li { padding: 1rem; border: 1px solid rgba(49, 85, 112, 0.18); border-left-width: 0.3rem; border-radius: 0.8rem; background: white; }
+.company-role-list li.role-confirmed { border-left-color: var(--green); }
+.company-role-list li.role-context { border-left-color: #547894; }
+.company-role-list li.role-unconfirmed { border-left-color: #ad8b49; }
+.role-heading { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; color: var(--muted); font-size: 0.78rem; font-weight: 750; }
+.role-heading small { flex: 0 0 auto; padding: 0.22rem 0.45rem; border-radius: 999px; background: #edf1f6; font-size: 0.68rem; }
+.company-role-list strong { display: block; margin-top: 0.55rem; overflow-wrap: anywhere; font-size: 1rem; }
+.company-role-list p { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.84rem; line-height: 1.55; }
+.company-boundary { margin: 1rem 0 0; padding: 0.9rem; border-radius: 0.7rem; background: #fff1d6; line-height: 1.6; }
+.role-sources { margin: 0.8rem 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
+.role-sources a { color: #315570; font-weight: 700; }
+
 .information-section {
   margin-top: 1.25rem;
   padding: clamp(1.1rem, 3vw, 1.5rem);
@@ -495,6 +517,7 @@ footer {
   .input-row button { width: 100%; }
   .product-grid { grid-template-columns: 1fr; }
   .answer-grid { grid-template-columns: 1fr; }
+  .company-role-list { grid-template-columns: 1fr; }
   .relationship-connection { grid-template-columns: 1fr; }
   .disclosure-status-grid { grid-template-columns: 1fr; }
   .comparison-grid { grid-template-columns: 1fr; }
